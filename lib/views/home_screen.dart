@@ -170,7 +170,7 @@ class HomeScreen extends StatelessWidget {
                 ],
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             Card(
               color: Colors.blue.shade100,
               child: SizedBox(
@@ -185,24 +185,54 @@ class HomeScreen extends StatelessWidget {
                 width: double.infinity,
                 height: 220,
                 child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const Text('Quick Actions'),
+                    Text(
+                      '   Quick Actions',
+                      style: TextStyle(color: Colors.purple.shade900),
+                    ),
+                    const SizedBox(height: 10),
                     Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
-                          actions('Recharge'),
-                          actions('Upgrade'),
-                          actions('Track'),
-                          actions('Settings'),
+                          actions(
+                            "Recharge",
+                            Icons.mobile_friendly,
+                          ),
+                          actions(
+                            "Pay Bill",
+                            Icons.payment_sharp,
+                          ),
+                          actions(
+                            "Landline",
+                            Icons.phone,
+                          ),
+                          actions(
+                            "Book fiber",
+                            Icons.book,
+                          ),
                         ]),
                     const Spacer(),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        actions('Recharge'),
-                        actions('Upgrade'),
-                        actions('Track'),
-                        actions('Settings'),
+                        actions(
+                          "Upgrade to 4G SIM",
+                          Icons.sim_card,
+                        ),
+                        actions(
+                          "Choose your Number",
+                          Icons.sim_card_download_rounded,
+                        ),
+                        actions(
+                          "Do not Disturb",
+                          Icons.do_not_disturb_alt,
+                        ),
+                        actions(
+                          "Games",
+                          Icons.games,
+                        ),
                       ],
                     )
                   ],
@@ -239,7 +269,7 @@ class HomeScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
+              const Text(
                 "App Exclusive Offer",
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
               ),
@@ -250,7 +280,7 @@ class HomeScreen extends StatelessWidget {
                     fontSize: 11,
                     color: Colors.grey.shade600),
               ),
-              Text(
+              const Text(
                 "Check Now >>",
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
               ),
@@ -263,8 +293,8 @@ class HomeScreen extends StatelessWidget {
               ),
             ],
           ),
-          Spacer(),
-          Row(
+          const Spacer(),
+          const Row(
             children: [
               Text(
                 "2",
@@ -282,7 +312,7 @@ class HomeScreen extends StatelessWidget {
               )
             ],
           ),
-          SizedBox(
+          const SizedBox(
             width: 50,
           ),
         ],
@@ -290,10 +320,10 @@ class HomeScreen extends StatelessWidget {
     );
   }
 
-  Widget actions(String text) {
+  Widget actions(String text, IconData iconData) {
     return Column(
       children: [
-        const CircleAvatar(child: Icon(Icons.ac_unit)),
+        CircleAvatar(child: Icon(iconData)),
         Text(text),
       ],
     );
